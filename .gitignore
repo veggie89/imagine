@@ -1,3 +1,4 @@
+# See http://help.github.com/ignore-files/ for more about ignoring 
 *.rbc
 *.sassc
 .sass-cache
@@ -8,9 +9,16 @@ capybara-*.html
 /log/*
 /tmp/*
 /db/*.sqlite3
+/db/schema.rb
+/db/dump.rdb
+/db/seeds.rb
 /public/system/*
 /coverage/
 /spec/tmp/*
 **.orig
 rerun.txt
 pickle-email-*.html
+.DS_Store
+/config/database.yml
+/config/service.yml
+/public/assets
