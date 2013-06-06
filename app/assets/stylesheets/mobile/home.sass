@@ -1,0 +1,68 @@
+@import "utils"
+
+.ico
+	font-size: 400px
+	text-align: center
+body.mobile	
+	@include linear-gradient(150deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%)
+	//#F41 0%, #8A0000 100%
+	background-attachment: fixed	
+	nav
+		#banner
+			text-align: center
+			@include text-shine
+			font-size: 48px
+
+	section
+		color: white
+		#member
+			padding: 6px
+			font-size: 18px
+			border: 1px solid #e5e5e5
+			margin: 10px
+			@include glass
+			border-radius: 5px
+			img
+				width: 32px
+				border-radius: 5px
+		article
+			.quote
+				margin: 10px
+				border: 1px solid #e5e5e5
+				text-shadow: none
+			#images
+				.action_nav
+					padding: 10px
+					text-align: center
+					.reload
+						display: inline-block
+						padding: 10px
+						@include round(5px)
+						border: 1px solid #fff
+				.container
+					.image 
+						text-align: center
+
+		#login
+			padding: 10px
+			list-style: none
+			margin: 0
+			.tip
+				text-align: center
+				color: white
+				margin-bottom: 10px
+				font-size: 18px
+			a 
+				display: block
+				padding: 6px
+				border: 1px solid #fff
+				margin: 8px 0
+				border-radius: 5px
+				@include glass
+				img
+					width: 32px
+				span
+					font-size: 26px
+					vertical-align: middle
+					color: #fff
+

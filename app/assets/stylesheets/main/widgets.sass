@@ -1,0 +1,86 @@
+@import "utils"
+
+#dashboard
+	#widgets
+		margin: 10px
+		.banner
+			height: 100px
+			position: relative
+			overflow: hidden
+			.action
+				font-size: 60px
+				position: absolute
+				top: 50%
+				right: 25px
+				margin-top: -34px
+				@include transition(all,0.8s)
+				span
+					display: inline-block
+					cursor: pointer
+					width: 70px
+					text-align: center
+				.pause
+					display: none
+				span:hover
+					color: #6fb5e8
+		.headline
+			margin-bottom: 10px
+		#person.enter_in
+			.action	
+				.enter
+					display: none
+				.pause
+					display: inline-block
+		#person
+			width: 50%		
+			margin-right: -10px
+			margin-left: 10px	
+			.banner
+				margin-right: 10px
+				.name
+					font-size: 26px
+					line-height: 2
+					padding-right: 85px	
+				.area
+					padding-right: 85px	
+				.action
+					@include transform(translateX(120px))
+
+		#song.playing
+			.action	
+				.play
+					display: none
+				.pause
+					display: inline-block
+		#song
+			width: 50%		
+			.panel
+				display: none	
+				font-size: 40px 
+				position: fixed
+				bottom: 40px
+				width: 100%
+				left: 0
+				a 
+					color: #ff903a
+			.lyrics_container
+				width: 100%		
+				.lyrics
+					position: absolute
+					left: 50%
+					width: 900px
+					margin-left: -450px
+					@include transition(1s)
+					@include transform(scale(0) translateY(0))
+					font-size: 20px
+					color: #333
+			.banner
+				.title
+					font-size: 26px
+					line-height: 2
+					padding-right: 85px				
+				.artist
+					font-size: 26px
+					padding-right: 85px
+				.action					
+					@include transform(translateX(120px))	

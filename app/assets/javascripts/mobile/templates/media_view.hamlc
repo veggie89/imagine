@@ -1,0 +1,7 @@
+.action_nav
+	%span.reload
+		更新
+.container
+	- for i in @tumblr
+		.image
+			%img{:src => i}

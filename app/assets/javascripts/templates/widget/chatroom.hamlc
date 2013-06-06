@@ -1,0 +1,28 @@
+.container
+	.inner_wrap
+		#oline_users
+		%input#chat_content(type="text" placeholder="和一起学习的伙伴畅谈吧")
+#invite.alert.hide
+	.close
+		%span.icon-remove-circle
+	.form.alert-info
+		你想邀请哪一个好友和你一起上课呢？
+	- if @friends		
+		.list.clearfix
+			- for f in @friends
+				.friend.left{:uid => f.id, :title => f.name}
+					%img{:src => f.profile_image_url}
+		.message.form.alert-success
+			%span.uname
+			我觉得你可能会对
+			%span.cname
+			这堂课感兴趣哦，快跟我来一课吧！
+		.share
+			%span.icon-share(title = "发出邀请")
+	- else
+		.form
+			ohh,根据你的社交信息未找到任何好友哦。没关系，你也可以手动复制以下消息向所有关注你的人发出邀请。
+		.message.form.alert-success
+			我觉得这堂课
+			%span.cname
+			真的很有意思，爱学英语的童鞋们快跟我来一课吧！ 17up.org

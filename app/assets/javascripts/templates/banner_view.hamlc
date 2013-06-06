@@ -1,0 +1,14 @@
+.avatar(title="点我更换头像" data-uploader="avatar")		
+	%img{:src => @avatar}
+	%i.icon-upload-alt
+.info
+	.name
+		= @name
+	.gem.label
+		= @gem
+.brand.dancer
+	17up
+.nav-item
+	%a.active(href = "/members/sign_out" data-method="delete" rel="nofollow")
+		%span.button.xs.glossy(data-icon=' ')
+			%i.icon-off

@@ -1,0 +1,140 @@
+@import "utils"
+
+#dashboard 
+	#imagine
+		@include user-select(none)
+		.word.active
+			opacity: 1
+		.word
+			text-align: center
+			z-index: 1
+			position: relative
+			opacity: 0
+			@include transition(all,0.8s)
+		.action
+			position: absolute
+			right: -50px
+			top: 50%
+			margin-top: -15px
+			span
+				cursor: pointer
+				padding: 5px 
+				border: 1px solid #d6e9c6
+				color: #468847
+				background: #dff0d8
+				@include round(5px)
+				display: inline-block
+		.title
+			line-height: 2
+			color: black
+			@include text-shadow-3d
+			font-size: 120px
+			input
+				font-size: 40px
+				line-height: 1
+				height: 60px
+				text-align: center
+		.tip
+			line-height: 2
+			font-size: 60px
+		.original
+			font-size: 16px
+			padding: 8px
+			line-height: 1.4
+		.speech 
+			margin-top: 20px
+			input
+				cursor: pointer
+				border: 0
+				font-size: 100px
+				width: 42px
+				padding: 10px
+				height: 42px
+				border-radius: 50%
+				@include shadow(0,0,10px,#777,inset)
+				&:focus
+					outline: none
+					border: none
+		.synsets
+			margin: 10px 0
+			.label
+				font-size: 22px
+				font-weight: normal
+		.image
+			margin-bottom: 10px
+			.upload_img
+				cursor: pointer
+				position: relative
+				display: inline-block
+				img 
+					@include round(10px)
+					@include shadow(0px,1px,3px,rgba(0,0,0,.3))
+				i
+					position: absolute
+					padding: 5px
+					background: rgba(0,0,0,0.7)
+					color: #eee
+					z-index: 999
+					bottom: 5px
+					right: 5px
+					@include round(5px)
+					opacity: 0
+				&:hover
+					i
+						opacity: 1
+		.audio
+			.record
+				.icon-spin
+					display: none
+				.icon-circle			
+					display: inline
+			.record.ing
+				pointer-events: none
+				.icon-spin
+					display: inline-block
+				.icon-circle
+					display: none
+	#courses
+		margin: 10px
+		.form
+			margin-bottom: 10px
+			position: relative
+		li.opacity
+			opacity: 0.5
+		li:hover
+			opacity: 1
+		li 
+			list-style: none
+			@include transition(opacity,0.8s)
+			@include user-select(none)
+			.title
+				font-size: 18px
+				line-height: 1.5
+				padding-right: 80px
+			.info
+				font-size: 14px
+				padding-right: 80px
+				a 
+					color: #468847
+			.action
+				position: absolute
+				right: 15px
+				top: 13px
+			.content
+				overflow: auto
+				line-height: 1.5
+				padding-bottom: 40px
+				color: #468847
+				> div
+					margin: 10px 0
+					text-indent: 20px
+				b 
+					color: #666
+					cursor: pointer
+				i
+					color: #3f94ff
+				b.selected
+					color: #ff2f4f
+
+			.tips
+				margin-top: 10px

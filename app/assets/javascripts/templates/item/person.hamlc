@@ -1,0 +1,12 @@
+.form.banner.alert-success
+	.name.ellipsis
+		= @name
+	.area.ellipsis
+		= @area
+	.action
+		%span.enter
+			%i.icon-facetime-video
+		%span.pause
+			%i.icon-pause
+		%span.back
+			%i.icon-reply

@@ -1,0 +1,10 @@
+.alert.alert-info
+	%span.icon-list
+	课程列表
+	%select#c_filter
+		%option(value="1")
+			已发布
+		%option(value="2")
+			待审合
+		%option(value="3")
+			草稿

@@ -1,0 +1,49 @@
+- if @title
+	.word_card.hide
+		.action.to_imagine(title = "忘记了？偷看解释")
+			%span.icon-eye-open
+		.image
+			%span.upload_img(data-uploader="uword" title="点击上传")
+				%img{:src => @img_url }
+				%i.icon-upload-alt
+		.audio
+			%span.btn.pink.record(title="录制你自己的发音")
+				%i.icon-circle
+				%i.icon-spinner.icon-spin
+			%span.btn.green.play
+				%i.icon-play
+		- if @synsets.length > 0
+			.synsets			
+				- for i in @synsets
+					%span.label.label-success
+						= i
+		- if @sentences.length > 0
+			.sentences
+				- for s in @sentences
+					.sentence.form.alert-success
+						= s
+	.word_card
+		.action.to_imagine(title = "记住了，闭目联想")
+			%span.icon-eye-close
+		.title.amienne
+			%span
+				= @title
+		.original.alert-success
+			= @content
+		.speech
+			%input{"data-key" => @title}(type="text" x-webkit-speech='x-webkit-speech' lang="en" x-webkit-grammar="builtin:translate" title="测试你的发音")
+			
+- if @tip
+	.tip.amienne
+		= @tip
+- if @sum
+	.info
+		你有
+		%span.num
+			= @sum
+		个单词需要学习
+- if @end
+	.navigate
+		.btn.goFirst
+			再练一次
+

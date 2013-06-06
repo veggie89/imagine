@@ -1,0 +1,48 @@
+- if @editable
+	- if @next
+		.title
+			= @title
+		- if @tags
+			.tags
+				= @tags
+		.content
+			!= @raw_content
+		%span.btn.publish.green
+			%i.icon-ok
+			提交审核
+	- else
+		.editor
+			!= JST['form/course_form'](course: @)
+	.edit-action
+		%span.btn.back
+			%i.icon-reply
+			返回
+		- if @status is 3
+			%span.btn.delete.pink
+				%i.icon-remove
+				删除
+- else
+	.headline
+		.title
+			- if @title
+				= @title
+			- else
+				This Is A New Course
+		.u_at
+			%span.icon-time
+			- if @u_at
+				= (new Date(@u_at)).format("yyyy-MM-dd hh:mm:ss")
+				saved
+			- else
+				No Sync Record
+		.action
+			- if @status is 1
+				%span.btn.disabled
+					已发布
+			- else
+				%span.btn.edit(title="编辑")
+					%i.icon-edit
+				- if @status is 2
+					%span.btn.disabled
+						审核中
+	

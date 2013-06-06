@@ -1,0 +1,19 @@
+#icontrol
+	#progress
+		.current_bar
+#assets
+#imagine
+#widgets.clearfix{:class => ("hide" if @is_newer) }
+	.headline.form.alert-info
+		%span.icon-star
+		每周推荐
+	#quote
+#courses{:class => ("hide" if @is_newer) }
+	.headline.form.alert-info
+		%span.icon-magic
+		智能课表
+
+	
+
+
+	

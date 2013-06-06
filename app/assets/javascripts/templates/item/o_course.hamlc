@@ -1,0 +1,37 @@
+- if @check
+	.title
+		= @title
+	- if @tags
+		.tags
+			= @tags
+	.content
+		!= @raw_content
+	- if @status is 2
+		%span.btn.open.green
+			%i.icon-ok
+			通过并发布
+	.edit-action
+		%span.btn.back
+			%i.icon-reply
+			返回
+- else
+	.headline
+		.title
+			= @title
+		.u_at
+			%span.icon-time
+			= (new Date(@u_at)).format("yyyy-MM-dd hh:mm:ss")
+			saved
+			%span.icon-user
+			= @author
+		.action
+			- if @status is 1
+				%span.btn.disabled
+					已发布
+			- else
+				%span.btn.check(title="审核")
+					%i.icon-eye-open
+				- if @status is 2
+					%span.btn.disabled
+						审核中
+	

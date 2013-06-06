@@ -1,0 +1,19 @@
+@import "utils"
+
+#login_form
+	width: 270px
+	margin: 0 auto
+	margin-bottom: 50px
+	margin-top: 50px
+	padding: 20px
+	background: white url(/assets/img/back_pattern/back_pattern.png)
+	@include shadow(0,2px,5px,#999,inset)
+	@include round(15px)
+	input[type='email'],input[type='password']
+		width: 210px
+	.title
+		padding-bottom: 10px
+		font-size: 26px
+		text-align: center
+	.btn 
+		@include button(shiny)

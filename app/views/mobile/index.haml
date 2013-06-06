@@ -1,0 +1,25 @@
+%nav
+	#banner.dancer
+		17up
+- if @quote
+	#member
+		= image_tag(current_member.avatar)
+		%i.name
+			= current_member.name
+	%article
+		.quote
+			❝
+			= @quote["content"]
+			.author
+				= @quote["author"]["name"]
+		
+- else
+	#login
+		.tip
+			login with ➤
+		- Authorization::PROVIDERS.each do |x|
+			= link_to member_omniauth_authorize_path(x.to_sym) do
+				= image_tag("icon/#{x}_big.png",:title => x)
+				%span
+					= x
+				

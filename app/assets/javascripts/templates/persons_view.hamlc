@@ -1,0 +1,7 @@
+%nav.alert.alert-info
+	%span.icon-list
+	人物
+- for p in @persons
+	.form.alert-success
+		= p.name
+

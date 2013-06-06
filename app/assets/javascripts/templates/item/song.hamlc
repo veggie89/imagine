@@ -1,0 +1,17 @@
+.banner.form.alert-success
+	.title.ellipsis
+		= @title
+	.artist.dancer.ellipsis
+		= @artist
+	.action
+		%span.play
+			%i.icon-play
+		%span.pause
+			%i.icon-pause
+		%span.back
+			%i.icon-reply
+.lyrics_container
+.panel.text_center
+	- unless @liked
+		%a.like(href="#like")
+			%span.icon-thumbs-up

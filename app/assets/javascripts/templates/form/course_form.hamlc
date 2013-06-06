@@ -1,0 +1,13 @@
+%form(action="#" method="post")
+	%input{:value => @course._id}(type="hidden" name="_id")
+	%input.center_input{:value => @course.title}(name="title" placeholder = "输入课程标题" type="text" required="required" autocomplete="off")
+	%input.tags{:value => @course.tags}(name="tags")
+	%textarea{:name => 'content'}(placeholder="请在此编辑您的课程正文")
+		= @course.content
+	%span.btn.save
+		%i.icon-ok
+		保存修改
+	- if @course.status is 3 or 2
+		%span.btn.next.green
+			%i.icon-chevron-down
+			编辑词汇

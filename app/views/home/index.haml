@@ -1,0 +1,57 @@
+.logo_text.dancer
+	17up
+= render 'sorry'
+#welcome_wrap
+	#impress
+		#topic.step.tallys(data-x="0" data-y="1800" data-z="3000" data-scale="1")
+			#logo.title.amienne
+				imagine english
+			.desc
+				知行合一
+				%br
+				以联想的方式学英语
+		#belief.amienne.step(data-x="0" data-y="600" data-z="1500" data-scale="1")
+			#love-map
+				%span.dancer
+					love
+				%span.moon
+					✈
+			.title.amienne
+				Love can change anything
+			.desc
+				任斗转星移，唯有一个愿望不变：让你快乐
+			
+		#login.step(data-x="0" data-y="-600" data-z="0" data-scale="1")
+			.desc
+				还差
+				%span.num
+					= @num
+				名志愿者
+				%br
+				你可以选择以下任意方式加入
+
+			- Authorization::PROVIDERS.each do |x|
+				= link_to image_tag("icon/#{x}_big.png",:title => x),member_omniauth_authorize_path(x.to_sym)
+		
+		#contact.step.text_center(data-x="0" data-y="-1800" data-z="1500"  data-scale="1")
+			.desc
+				一起共铸属于我们的知识社区吧
+			= mail_to $config[:email],image_tag("icon/gmail.png")
+			%p
+				= render 'shared/copyright'	
+	%nav
+		%ul.tab
+			%li
+				%a(href = "#topic")
+					主题
+			%li
+				%a(href = "#belief")
+					信念
+			%li
+				%a(href = "#login")
+					加入
+			%li
+				%a(href = "#contact")
+					联络
+- content_for :footer do	
+	#init.hide(data-js="Welcome")

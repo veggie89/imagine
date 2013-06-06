@@ -1,0 +1,49 @@
+@mixin course-li
+	.new
+		position: absolute
+		right: 20px
+		font-size: 24px
+		top: 50%
+		margin-top: -18px
+		line-height: 36px
+		cursor: pointer
+	li 
+		list-style: none
+		position: relative
+		.edit-action
+			position: absolute
+			bottom: 10px
+			right: 10px
+		.headline
+			position: relative
+			.title
+				font-size: 18px
+				line-height: 1.5
+			.u_at
+				font-size: 14px
+			.action
+				position: absolute
+				right: 0px
+				top: 50%
+				margin-top: -20px
+				.label
+					padding: 10px
+				span
+					font-size: 20px
+		.tags
+			margin-top: 10px
+			padding-left: 10px
+			border-left: 4px solid #3a7ced
+		.content
+			line-height: 1.5
+			padding: 10px
+			margin: 10px 0
+			border: 1px dashed
+			background: rgba(255,255,255,0.3)
+			> div
+				margin: 10px 0
+				text-indent: 20px
+			b 
+				color: #ff2f4f
+			i
+				color: #3f94ff
