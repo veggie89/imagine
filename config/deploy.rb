@@ -10,10 +10,10 @@ set :rvm_ruby_string, 'ruby-2.0.0-p0'
 set :rvm_type, :user
 
 set :application, "17up"
-set :repository,  "git@github.com:17up/17up.git"
+set :repository,  "git@github.com:veggie89/imagine.git"
 set :branch, "master"
 set :scm, :git
-set :scm_username, "kkxlkkxllb@gmail.com"
+set :scm_username, "veggie.17uporg@gmail.com"
 set :keep_releases, 3   # 留下多少个版本的源代码
 set :user, "www"
 set :deploy_to, "/home/#{user}/#{application}/"

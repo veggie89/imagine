@@ -10,12 +10,12 @@ class UWord
   validates :member_id, :presence => true, :uniqueness => {:scope => :word_id }
   
   IMAGE_URL = "/system/images/u_word/"
-  IMAGE_PATH = "#{Rails.root}/public"+IMAGE_URL
+  IMAGE_PATH = "#{Rails.root}/public" + IMAGE_URL
   IMAGE_SIZE_LIMIT = 2*1000*1000 #2m
   IMAGE_WIDTH = 280
 
   AUDIO_URL = "/system/audios/u_word/"
-  AUDIO_PATH = "#{Rails.root}/public"+AUDIO_URL
+  AUDIO_PATH = "#{Rails.root}/public" + AUDIO_URL
 
   scope :has_image, -> {where(:img_size.exists => true)}
 

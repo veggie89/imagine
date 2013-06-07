@@ -117,6 +117,19 @@ class MembersController < ApplicationController
       
   end
 
+  # post
+  def upload_audio
+    file = params[:file]
+    @store_path = Member::AUDIO_PATH + current_member._id 
+    @audio_path = current_member.audio_path(params[:_id])
+    unless File.exist?(@store_path)
+      `mkdir -p #{@store_path}`
+    end
+    # 压缩成 ogg
+    `oggenc -q 4 #{file.tempfile.path} -o #{@audio_path}`
+    render_json 0,"ok"
+  end
+
   # set uid
   # post
   def update  

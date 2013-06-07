@@ -45,7 +45,11 @@ class Member
   after_destroy :clear_data
 
   AVATAR_URL = "/system/images/member/"
-  AVATAR_PATH = "#{Rails.root}/public"+AVATAR_URL
+  AVATAR_PATH = "#{Rails.root}/public" + AVATAR_URL
+
+  AUDIO_URL = "/system/audios/member/"
+  AUDIO_PATH = "#{Rails.root}/public" + AUDIO_URL
+
   AVATAR_SIZE_LIMIT = 3000*1000 #3m
   THUMB_SIZE = 120
   ## role 用户组别 
@@ -96,6 +100,14 @@ class Member
 
   def validate_upload_avatar(file,type)
     type.scan(/(jpeg|png|gif)/).any? and File.size(file) < AVATAR_SIZE_LIMIT
+  end
+
+  def audio_path(ts)
+    AUDIO_PATH + "#{_id}/#{ts}.ogg"
+  end
+
+  def audio_url(ts)
+    AUDIO_URL + "#{_id}/#{ts}.ogg"
   end
 
   def has_u_word(wid)

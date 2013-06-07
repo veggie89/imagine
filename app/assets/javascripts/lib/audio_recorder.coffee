@@ -29,7 +29,7 @@ class window.AudioRecorder
 		self.recorder && self.recorder.stop()
 		callback()
 		self.recorder.clear()
-	createDownloadLink: (my_audio,_id) ->
+	createDownloadLink: (my_audio,_id,post_url = '/words/upload_audio_u') ->
 		self = this
 		self.recorder and self.recorder.exportWAV (blob) ->
 			url = URL.createObjectURL(blob)	
@@ -37,8 +37,8 @@ class window.AudioRecorder
 			my_audio.play()
 			form = new FormData()
 			form.append("file", blob)
-			form.append("_id",_id)
+			form.append("_id",_id) if _id
 			form.append("authenticity_token",$("footer #uploader .audio form").find("input[name='authenticity_token']").val())
 			oReq = new XMLHttpRequest()
-			oReq.open("POST", '/words/upload_audio_u')
+			oReq.open("POST",post_url)
 			oReq.send(form)

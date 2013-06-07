@@ -8,6 +8,7 @@ class window.Veggie.ChatView extends Backbone.View
 		"click .close": "close_invite"
 		"click .friend": "select_invite"
 		"click .share": "send_invite"
+		"click span.speech": "record"
 	initialize: (self = this) ->	
 		$("body").append(self.render().el)
 		if location.href.match(/17up.org/)
@@ -20,7 +21,6 @@ class window.Veggie.ChatView extends Backbone.View
 			@notify_channel = this.subscribe("notify_" + uid)
 			@notify_channel.bind "invite_course", (data) ->
 				$("#courses .headline").after JST["widget/notice"](msg: data)
-
 
 		$(document).bind "keyup",(event) ->  		 			
 			if event.keyCode is 13
@@ -42,7 +42,23 @@ class window.Veggie.ChatView extends Backbone.View
 				template = @template(data.toJSON())
 				@$el.html(template)
 		this
-
+	record: (e) ->
+		$btn = $(e.currentTarget)
+		@speech_audio = new Audio()
+		$ts = (new Date()).getTime()
+		self = this
+		if navigator.webkitGetUserMedia or navigator.getUserMedia
+			window.recorder = window.recorder || new AudioRecorder()
+			window.recorder.startRecording ->			
+				$btn.addClass 'ing'
+				setTimeout( ->
+					window.recorder.stopRecording ->
+						$btn.removeClass 'ing'
+						window.recorder.createDownloadLink(self.speech_audio,$ts,"/members/upload_audio")
+				,10000)
+			# 通知其他人 ts & current_member
+		else
+			Utils.flash "您的浏览器不支持语音输入，请尝试chrome","error"
 	send_message: (content) ->
 		message = 
 			cid: @channel.name

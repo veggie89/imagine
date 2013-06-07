@@ -51,6 +51,7 @@ Veggie::Application.routes.draw do
   namespace :members do
     post "update"
     post "upload_avatar"
+    post "upload_audio"
     post "send_invite"
     get "dashboard"
     get "account"
